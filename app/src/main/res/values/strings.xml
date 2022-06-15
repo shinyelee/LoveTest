@@ -8,4 +8,6 @@
         As time goes, the flowers have all withered.
         What are you going to do with that?
     </string>
+    <string name="result_title">You are a quitter!</string>
+    <string name="result">Maybe you give up on love too easily...</string>
 </resources>
