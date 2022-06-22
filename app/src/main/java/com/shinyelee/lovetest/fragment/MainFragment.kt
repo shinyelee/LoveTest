@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.shinyelee.lovetest.R
@@ -24,5 +25,12 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
+        // 화살표 클릭하면
+        var next = view.findViewById<ImageView>(R.id.mainNextBtn)
+        // 메인 페이지에서 질문 페이지로 이동
+        next.setOnClickListener {
+            navController.navigate(R.id.action_mainFragment_to_questionFragment)
+        }
     }
+
 }
