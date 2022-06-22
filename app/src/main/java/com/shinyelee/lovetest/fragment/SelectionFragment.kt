@@ -5,32 +5,67 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.shinyelee.lovetest.R
+import com.shinyelee.lovetest.databinding.FragmentSelectionBinding
 
-class SelectionFragment : Fragment() {
+class SelectionFragment : Fragment(), View.OnClickListener {
+
+    // 뷰바인딩
+    private var vBinding : FragmentSelectionBinding? = null
+    private val binding get() = vBinding!!
 
     lateinit var navController : NavController
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_selection, container, false)
+
+        // 뷰바인딩
+        vBinding = FragmentSelectionBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         super.onViewCreated(view, savedInstanceState)
+
         navController = Navigation.findNavController(view)
-        // 화살표 클릭하면
-        var back = view.findViewById<ImageView>(R.id.selecBackBtn)
-        // 선택지 페이지에서 질문 페이지로 이동
-        back.setOnClickListener {
-            navController.navigate(R.id.action_selectionFragment_to_questionFragment)
+
+        binding.backBtn.setOnClickListener(this)
+        binding.option1.setOnClickListener(this)
+        binding.option2.setOnClickListener(this)
+        binding.option3.setOnClickListener(this)
+        binding.option4.setOnClickListener(this)
+
+    }
+
+    override fun onClick(v: View?) {
+
+        when(v?.id) {
+            R.id.option1 -> {navWithIndex(1)}
+            R.id.option2 -> {navWithIndex(2)}
+            R.id.option3 -> {navWithIndex(3)}
+            R.id.option4 -> {navWithIndex(4)}
+            R.id.backBtn -> {
+                navController.popBackStack()
+            }
         }
+
+    }
+
+    private fun navWithIndex(index : Int) {
+
+        val bundle = bundleOf("index" to index)
+
+        navController.navigate(R.id.action_selectionFragment_to_resultFragment, bundle)
+
     }
 
 }
