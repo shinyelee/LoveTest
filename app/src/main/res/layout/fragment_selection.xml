@@ -21,6 +21,7 @@
             android:id="@+id/option1"
             android:text="1. Throw it away."
             android:textSize="20dp"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -32,6 +33,7 @@
             android:id="@+id/option2"
             android:text="2. Water the flowers."
             android:textSize="20dp"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -43,6 +45,7 @@
             android:id="@+id/option3"
             android:text="3. Cut it off with scissors"
             android:textSize="20dp"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -54,6 +57,7 @@
             android:id="@+id/option4"
             android:text="4. Make them as dried flower."
             android:textSize="20dp"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -71,7 +75,7 @@
         app:layout_constraintGuide_percent="0.85" />
 
     <ImageView
-        android:id="@+id/btnBack"
+        android:id="@+id/selecBackBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/back"
