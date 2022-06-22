@@ -13,7 +13,7 @@
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_mainFragment_to_questionFragment2"
+            android:id="@+id/action_mainFragment_to_questionFragment"
             app:destination="@id/questionFragment" />
     </fragment>
     <fragment
@@ -22,7 +22,7 @@
         android:label="fragment_question"
         tools:layout="@layout/fragment_question" >
         <action
-            android:id="@+id/action_questionFragment_to_selectionFragment2"
+            android:id="@+id/action_questionFragment_to_selectionFragment"
             app:destination="@id/selectionFragment" />
     </fragment>
     <fragment
@@ -31,7 +31,7 @@
         android:label="fragment_selection"
         tools:layout="@layout/fragment_selection" >
         <action
-            android:id="@+id/action_selectionFragment_to_resultFragment2"
+            android:id="@+id/action_selectionFragment_to_resultFragment"
             app:destination="@id/resultFragment" />
     </fragment>
     <fragment
