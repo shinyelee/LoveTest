@@ -19,7 +19,7 @@
 
         <TextView
             android:id="@+id/option1"
-            android:text="1. Throw it away."
+            android:text="@string/option1"
             android:textSize="20dp"
             android:textColor="@color/black"
             android:layout_width="match_parent"
@@ -31,7 +31,7 @@
 
         <TextView
             android:id="@+id/option2"
-            android:text="2. Water the flowers."
+            android:text="@string/option2"
             android:textSize="20dp"
             android:textColor="@color/black"
             android:layout_width="match_parent"
@@ -43,7 +43,7 @@
 
         <TextView
             android:id="@+id/option3"
-            android:text="3. Cut it off with scissors"
+            android:text="@string/option3"
             android:textSize="20dp"
             android:textColor="@color/black"
             android:layout_width="match_parent"
@@ -55,7 +55,7 @@
 
         <TextView
             android:id="@+id/option4"
-            android:text="4. Make them as dried flower."
+            android:text="@string/option4"
             android:textSize="20dp"
             android:textColor="@color/black"
             android:layout_width="match_parent"
