@@ -26,7 +26,7 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         // 화살표 클릭하면
-        var next = view.findViewById<ImageView>(R.id.mainNextBtn)
+        var next = view.findViewById<ImageView>(R.id.nextBtn)
         // 메인 페이지에서 질문 페이지로 이동
         next.setOnClickListener {
             navController.navigate(R.id.action_mainFragment_to_questionFragment)
