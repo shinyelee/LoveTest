@@ -8,8 +8,14 @@ import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.shinyelee.lovetest.R
+import com.shinyelee.lovetest.databinding.FragmentResultBinding
+import com.shinyelee.lovetest.databinding.FragmentSelectionBinding
 
 class ResultFragment : Fragment() {
+
+    // 뷰바인딩
+    private var vBinding : FragmentResultBinding? = null
+    private val binding get() = vBinding!!
 
     var option = -1
 
@@ -23,7 +29,10 @@ class ResultFragment : Fragment() {
 
         option = arguments?.getInt("index")?:-1
 
-        return inflater.inflate(R.layout.fragment_result, container, false)
+        // 뷰바인딩
+        vBinding = FragmentResultBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
 
     }
 
@@ -32,6 +41,31 @@ class ResultFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         navController = Navigation.findNavController(view)
+
+        setResult(option)
+
+    }
+
+    fun setResult(option: Int) {
+
+        when(option) {
+            1 -> {
+                binding.resultMain.text = "You are a QUITTER!"
+                binding.resultSub.text = "You can let the person easily."
+            }
+            2 -> {
+                binding.resultMain.text = "You should focus on yourself!"
+                binding.resultSub.text = "You become really clingy to your ex."
+            }
+            3 -> {
+                binding.resultMain.text = "You should take it easy!"
+                binding.resultSub.text = "You can do crazy things no matter what it takes."
+            }
+            4 -> {
+                binding.resultMain.text = "You are pretty mature."
+                binding.resultSub.text = "You can easily accept the break-up."
+            }
+        }
 
     }
 
