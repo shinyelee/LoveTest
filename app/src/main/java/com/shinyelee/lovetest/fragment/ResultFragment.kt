@@ -9,7 +9,6 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.shinyelee.lovetest.R
 import com.shinyelee.lovetest.databinding.FragmentResultBinding
-import com.shinyelee.lovetest.databinding.FragmentSelectionBinding
 
 class ResultFragment : Fragment() {
 
@@ -44,9 +43,13 @@ class ResultFragment : Fragment() {
 
         setResult(option)
 
+        binding.homeBtn.setOnClickListener {
+            navController.navigate(R.id.action_resultFragment_to_mainFragment)
+        }
+
     }
 
-    fun setResult(option: Int) {
+    private fun setResult(option: Int) {
 
         when(option) {
             1 -> {
@@ -54,15 +57,15 @@ class ResultFragment : Fragment() {
                 binding.resultSub.text = "You can let the person easily."
             }
             2 -> {
-                binding.resultMain.text = "You should focus on yourself!"
+                binding.resultMain.text = "You should focus on YOURSELF!"
                 binding.resultSub.text = "You become really clingy to your ex."
             }
             3 -> {
-                binding.resultMain.text = "You should take it easy!"
+                binding.resultMain.text = "You should take it EASY!"
                 binding.resultSub.text = "You can do crazy things no matter what it takes."
             }
             4 -> {
-                binding.resultMain.text = "You are pretty mature."
+                binding.resultMain.text = "You are pretty MATURE."
                 binding.resultSub.text = "You can easily accept the break-up."
             }
         }
