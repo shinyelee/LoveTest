@@ -30,8 +30,7 @@ class ResultFragment : Fragment() {
 
         // 뷰바인딩
         vBinding = FragmentResultBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
 
     }
 
@@ -43,6 +42,7 @@ class ResultFragment : Fragment() {
 
         setResult(option)
 
+        // 홈버튼 클릭하면 결과 페이지에서 메인 페이지로 이동
         binding.homeBtn.setOnClickListener {
             navController.navigate(R.id.action_resultFragment_to_mainFragment)
         }

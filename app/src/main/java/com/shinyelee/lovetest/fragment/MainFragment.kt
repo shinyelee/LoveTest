@@ -5,12 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.shinyelee.lovetest.R
+import com.shinyelee.lovetest.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
+
+    // 뷰바인딩
+    private var vBinding : FragmentMainBinding? = null
+    private val binding get() = vBinding!!
 
     lateinit var navController : NavController
 
@@ -20,7 +24,9 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        // 뷰바인딩
+        vBinding = FragmentMainBinding.inflate(inflater, container, false)
+        return binding.root
 
     }
 
@@ -30,11 +36,8 @@ class MainFragment : Fragment() {
 
         navController = Navigation.findNavController(view)
 
-        // 화살표 클릭하면
-        var next = view.findViewById<ImageView>(R.id.nextBtn)
-
-        // 메인 페이지에서 질문 페이지로 이동
-        next.setOnClickListener {
+        // 화살표 클릭하면 메인 페이지에서 질문 페이지로 이동
+        binding.nextBtn.setOnClickListener {
             navController.navigate(R.id.action_mainFragment_to_questionFragment)
         }
 

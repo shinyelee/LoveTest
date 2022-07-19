@@ -27,8 +27,7 @@ class SelectionFragment : Fragment(), View.OnClickListener {
 
         // 뷰바인딩
         vBinding = FragmentSelectionBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
 
     }
 
