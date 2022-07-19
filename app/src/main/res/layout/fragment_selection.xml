@@ -17,10 +17,11 @@
         android:padding="20dp"
         android:weightSum="4">
 
+        <!-- 선택지1 -->
         <TextView
             android:id="@+id/option1"
             android:text="@string/option1"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -29,10 +30,11 @@
             android:gravity="center"
             android:background="@drawable/selection" />
 
+        <!-- 선택지2 -->
         <TextView
             android:id="@+id/option2"
             android:text="@string/option2"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -41,10 +43,11 @@
             android:gravity="center"
             android:background="@drawable/selection" />
 
+        <!-- 선택지3 -->
         <TextView
             android:id="@+id/option3"
             android:text="@string/option3"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -53,10 +56,11 @@
             android:gravity="center"
             android:background="@drawable/selection" />
 
+        <!-- 선택지4 -->
         <TextView
             android:id="@+id/option4"
             android:text="@string/option4"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -74,6 +78,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.85" />
 
+    <!-- 뒤로가기 -->
     <ImageView
         android:id="@+id/backBtn"
         android:layout_width="wrap_content"

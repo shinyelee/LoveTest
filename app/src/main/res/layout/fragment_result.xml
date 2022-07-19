@@ -9,6 +9,7 @@
     android:background="@drawable/background"
     tools:context=".fragment.ResultFragment">
 
+    <!-- 결과 제목 -->
     <TextView
         android:id="@+id/resultMain"
         android:layout_width="wrap_content"
@@ -16,7 +17,7 @@
         android:text="resultMain"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/resultSub"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,13 +25,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25" />
 
+    <!-- 결과 내용 -->
     <TextView
         android:id="@+id/resultSub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="resultSub"
         android:textAlignment="center"
-        android:textSize="32dp"
+        android:textSize="32sp"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:padding="20dp"
@@ -41,6 +43,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.52" />
 
+    <!-- 홈버튼 -->
     <ImageView
         android:id="@+id/homeBtn"
         android:layout_width="wrap_content"
