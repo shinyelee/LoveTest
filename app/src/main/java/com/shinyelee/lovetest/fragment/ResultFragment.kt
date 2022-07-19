@@ -16,6 +16,7 @@ class ResultFragment : Fragment() {
     private var vBinding : FragmentResultBinding? = null
     private val binding get() = vBinding!!
 
+    // 인덱스
     var option = -1
 
     lateinit var navController : NavController
@@ -24,8 +25,9 @@ class ResultFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
+        // 인덱스
         option = arguments?.getInt("index")?:-1
 
         // 뷰바인딩
@@ -40,6 +42,7 @@ class ResultFragment : Fragment() {
 
         navController = Navigation.findNavController(view)
 
+        // 선택지에 따른 결과 표시
         setResult(option)
 
         // 홈버튼 클릭하면 결과 페이지에서 메인 페이지로 이동
@@ -51,7 +54,9 @@ class ResultFragment : Fragment() {
 
     private fun setResult(option: Int) {
 
+        // 동일한 프래그먼트에서
         when(option) {
+            // 선택지(인덱스)에 따라 텍스트만 바꿈
             1 -> {
                 binding.resultMain.text = "You are a QUITTER!"
                 binding.resultSub.text = "You can let the person easily."

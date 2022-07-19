@@ -23,7 +23,7 @@ class SelectionFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         // 뷰바인딩
         vBinding = FragmentSelectionBinding.inflate(inflater, container, false)
@@ -37,7 +37,10 @@ class SelectionFragment : Fragment(), View.OnClickListener {
 
         navController = Navigation.findNavController(view)
 
+        // 뒤로가기
         binding.backBtn.setOnClickListener(this)
+
+        // 선택지
         binding.option1.setOnClickListener(this)
         binding.option2.setOnClickListener(this)
         binding.option3.setOnClickListener(this)
@@ -45,20 +48,25 @@ class SelectionFragment : Fragment(), View.OnClickListener {
 
     }
 
+    // 클릭하면
     override fun onClick(v: View?) {
 
+        // 아래 순서대로 인덱스 부여
         when(v?.id) {
             R.id.option1 -> {navWithIndex(1)}
             R.id.option2 -> {navWithIndex(2)}
             R.id.option3 -> {navWithIndex(3)}
             R.id.option4 -> {navWithIndex(4)}
+            // 뒤로가기
             R.id.backBtn -> {navController.popBackStack()}
         }
 
     }
 
+    // 프래그먼트로 데이터 보냄
     private fun navWithIndex(index : Int) {
 
+        // "index"(키) 안에 index(값) 넣어줌
         val bundle = bundleOf("index" to index)
 
         navController.navigate(R.id.action_selectionFragment_to_resultFragment, bundle)
